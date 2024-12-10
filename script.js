@@ -63,33 +63,44 @@ function addToEnd() {
 }
 
 //iv.Finally, use the values of each object within the array and the array’s length property to calculate the average age of the group. This calculation should be accomplished using a loop.
-let avgAge = 0;
-for (let i = 0; i < result.length; i++) {
-  avgAge += Number(result[i].age);
+
+calculateAverageAgeUsingLoops();
+
+function calculateAverageAgeUsingLoops() {
+  let avgAge = 0;
+  for (let i = 0; i < result.length; i++) {
+    avgAge += Number(result[i].age);
+  }
+  console.log(avgAge / result.length);
 }
-console.log(avgAge / result.length);
 
 //Part 5:Full Circle the final set of data back into CSV format.
 
-let objKeys = result.map((r) => Object.keys(r));
-console.log(objKeys);
-
-let tempKeys = objKeys.map((r) => r.join(","));
-
-let objVal = result.map((ele) => Object.values(ele));
-console.log(objVal);
-let tempVal = objVal.map((ele) => ele.join(","));
-console.log(tempVal[1] + "=========");
-
-let csv = tempKeys[0] + "\\n";
-
-for (let i = 0; i < tempVal.length - 1; i++) {
-  if (i == tempVal.length - 2) {
-    csv += tempVal[i];
-  } else {
-    csv += tempVal[i] + "\\n";
-  }
-}
-
-let q = csv[csv.length - 2];
+const csv = convertingDataBackToCSV();
 console.log(csv);
+
+function convertingDataBackToCSV() {
+  let objKeys = result.map((r) => Object.keys(r));
+  //console.log(objKeys);
+
+  let tempKeys = objKeys.map((r) => r.join(","));
+
+  let objVal = result.map((ele) => Object.values(ele));
+  //console.log(objVal);
+  let tempVal = objVal.map((ele) => ele.join(","));
+  //console.log(tempVal[1] + "=========");
+
+  let csv = tempKeys[0] + "\\n";
+
+  for (let i = 0; i < tempVal.length - 1; i++) {
+    if (i == tempVal.length - 2) {
+      csv += tempVal[i];
+    } else {
+      csv += tempVal[i] + "\\n";
+    }
+  }
+
+  let q = csv[csv.length - 2];
+  //console.log(csv);
+  return csv;
+}
