@@ -4,12 +4,14 @@ let result = create2DArray(); // Caching the array in result for later use.
 console.log(result, " 2 d array creation");
 function create2DArray() {
   //Part. 2 Expanding Functionality
+
   let tempString = str.split("\n");
   console.log(tempString);
   let row = tempString.length;
   console.log(row);
 
   let updateArray = tempString.map((x) => x.split(","));
+
   //updatedArray is the 2 d array
 
   console.log(updateArray);
@@ -55,6 +57,7 @@ function insertAtIndex() {
   });
 }
 //iii.Add the following object to the end of the array:
+
 console.log(result, " Adding at the end");
 addToEnd();
 
