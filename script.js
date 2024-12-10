@@ -92,15 +92,12 @@ function convertingDataBackToCSV() {
 
   let csv = tempKeys[0] + "\\n";
 
-  for (let i = 0; i < tempVal.length - 1; i++) {
-    if (i == tempVal.length - 2) {
+  for (let i = 0; i < tempVal.length; i++) {
+    if (i == tempVal.length - 1) {
       csv += tempVal[i];
     } else {
       csv += tempVal[i] + "\\n";
     }
   }
-
-  let q = csv[csv.length - 2];
-  //console.log(csv);
   return csv;
 }
